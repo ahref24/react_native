@@ -5,6 +5,11 @@ import {styled} from "nativewind";
 import {SafeAreaView as RNSafeAreaView} from "react-native-safe-area-context";
 const SafeAreaView = styled(RNSafeAreaView);
 
+/**
+ * Render the app's home screen with a centered welcome message and navigation links.
+ *
+ * @returns The root React element for the home screen containing a welcome text and navigation links to onboarding, sign-in, sign-up, a Spotify subscription page, and a dynamic subscription route for an example id.
+ */
 export default function App() {
     return (
         <SafeAreaView className="flex-1 items-center justify-center bg-background">
