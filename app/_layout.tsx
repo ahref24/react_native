@@ -3,6 +3,11 @@ import '@/global.css';
 import {useFonts} from "expo-font";
 import {useEffect} from "react";
 
+/**
+ * Renders the application's root navigation stack with headers disabled for all screens.
+ *
+ * @returns The configured React element for the root Stack navigator.
+ */
 export default function RootLayout() {
   const [fontLoaded] = useFonts({
     'sans-regular': require('../assets/fonts/PlusJakartaSans-Regular.ttf'),
