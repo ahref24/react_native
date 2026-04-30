@@ -79,8 +79,10 @@ export default function SignInScreen() {
       const emailFactor = signIn.supportedSecondFactors?.find(
         (f: { strategy: string }) => f.strategy === 'email_code',
       )
-      if (emailFactor) await signIn.mfa.sendEmailCode()
-      setShowMfa(true)
+      if (emailFactor) {
+        await signIn.mfa.sendEmailCode()
+        setShowMfa(true)
+      }
     }
   }
 

@@ -55,7 +55,7 @@ export default function SignUpScreen() {
     }
   }
 
-  if (signUp.status === 'complete' || isSignedIn) return null
+  if (isSignedIn) return null
 
   // ── Verification step ──────────────────────────────────────────
   if (
@@ -221,7 +221,10 @@ export default function SignUpScreen() {
                       )}
                       style={{ paddingRight: 56 }}
                       value={password}
-                      onChangeText={setPassword}
+                      onChangeText={(v) => {
+                        setPassword(v)
+                        if (passwordMismatch) setPasswordMismatch(false)
+                      }}
                       placeholder="Min. 8 characters"
                       placeholderTextColor="rgba(8,17,38,0.35)"
                       secureTextEntry={!showPassword}
